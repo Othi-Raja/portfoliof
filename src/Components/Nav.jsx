@@ -13,7 +13,7 @@ import { Drawer, List, ListItem, ListItemIcon, ListItemText, IconButton } from '
 import './index.css';
 
 gsap.registerPlugin(ScrollTrigger);
-
+  
 const CustomNavbar = () => {
   const illoRef = useRef(null);
   const [isSpinning, setIsSpinning] = useState(true);
