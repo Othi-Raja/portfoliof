@@ -5,7 +5,7 @@ import b2 from "./3d_asserts/b2.png";
 import b3 from "./3d_asserts/b3.png";
 import b4 from "./3d_asserts/b3.png";
 import Poster from '../Poster/poster.jsx';
-
+ 
 // Badge Data
 const badges = [
     { id: 1, name: "Work Badge", description: "This is a 3D badge model representing achievements in work. It signifies excellence, dedication, and professional success.", icon: b1 },
