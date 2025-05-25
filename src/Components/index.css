@@ -1,0 +1,597 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+  color: black;
+  
+}
+body{
+  cursor: url('../asserts/default.png'),auto;
+  overflow-x:hidden;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.navbar.blur-bg {
+  backdrop-filter: blur(5px);
+  transition: backdrop-filter 0.3s ease-in-out;
+}
+ 
+/* .pointinghand{
+  cursor: url('../assets/pointinghand_100160.png');
+} */
+.navbar .logo img {
+  height: 40px;
+  width: auto;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+/* Navbar collapse icon animation */
+.navbar-toggler-icon {
+  transition: transform 0.4s ease;
+  /* Smooth transition for rotation */
+}
+.rotate-icon {
+  transform: rotate(180deg);
+  /* Rotate the icon 180 degrees */
+}
+#Home {
+  height: 100%;
+  width: 100%;
+}
+.cstm-bg-transparent {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.home-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.home-main-title {
+  font-size: 5rem;
+  font-weight: 700;
+}
+/* Tablet screens (landscape and portrait) */
+@media (max-width: 1024px) {
+  .home-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .home-main-title {
+    font-size: 4rem;
+  }
+}
+
+/* Mobile screens (large) */
+@media (max-width: 768px) {
+  .home-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .home-main-title {
+    font-size: 3.5rem;
+  }
+}
+
+/* Mobile screens (small) */
+@media (max-width: 576px) {
+  .home-subtitle {
+    font-size: 1rem;
+  }
+
+  .home-main-title {
+    font-size: 3rem;
+  }
+}
+
+/* Extra small mobile screens */
+@media (max-width: 400px) {
+  .home-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .home-main-title {
+    font-size: 2.5rem;
+  }
+}
+.cstm-col-1 {
+  height: auto;
+  
+  justify-content: center;
+}
+.illo {
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.316)); /* Add a drop shadow */
+}
+.blur{
+  filter: blur(100px);
+ position: absolute;
+  z-index: -9999;
+  background-color: rgba(110, 153, 227, 0.481);
+  height: 200px;
+  width: 200px;
+  transform: translateX(-300px);
+  border-radius: 50% 50%;
+  animation: blur 50s linear infinite; /* Add rotation animation */
+}
+
+.blur-1{
+  filter: blur(100px);
+ position: absolute;
+  z-index: -9999;
+  background-color: rgba(206, 110, 227, 0.481);
+  height: 200px;
+  width: 200px;
+  transform: translateY(-300px);
+  border-radius: 50% 50%;
+  animation: blur-1 50s linear infinite; /* Add rotation animation */
+
+}
+.blur-2{
+  filter: blur(100px);
+ position: absolute;
+  z-index: -9999;
+  background-color: rgba(227, 110, 141, 0.481);
+  height: 200px;
+  width: 200px;
+  transform: translateX(300px);
+  border-radius: 50% 50%;
+  animation: blur-2 50s linear infinite; /* Add rotation animation */
+
+}
+
+@keyframes blur {
+  0% {
+    transform: translateX(-300px) rotate(0deg);
+  }
+  50%{
+    transform: translateY(300px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(300px) rotate(360deg);
+  }
+}
+@keyframes blur-1 {
+  0% {
+    transform: translateY(-300px) rotate(0deg);
+  }
+  50%{
+    transform: translateX(300px) rotate(360deg);
+  }
+  100% {
+    transform: translateY(300px) rotate(360deg);
+  }
+}
+
+@keyframes blur-2 {
+  0% {
+    transform: translateX(-300px) rotate(0deg);
+  }
+  50%{
+    transform: translateY(300px) rotate(360deg);
+  }
+  100% {
+    transform: translateX(300px) rotate(360deg);
+  }
+}
+Marquee {
+  transform: rotate(-40deg); /* No quotes and no space between the angle and the unit */
+}
+
+/* Navbar Styles */
+.navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  padding: 1rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.75rem 0;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* Navigation Links */
+.nav-link-wrapper {
+  margin: 0 0.5rem;
+}
+
+.nav-link {
+  color: #4b5563 !important;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #2563eb !important;
+}
+
+.nav-link.active {
+  color: #2563eb !important;
+}
+
+.active-link-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #2563eb;
+  border-radius: 2px;
+}
+
+/* Drawer Styles */
+.drawer-divider {
+  height: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 991px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+
+  .navbar-scrolled {
+    padding: 0.5rem 0;
+  }
+
+  .logo {
+    font-size: 1.25rem;
+  }
+
+  /* Custom styles for MUI Drawer */
+  .MuiDrawer-paper {
+    border-left: none !important;
+  }
+
+  .MuiListItem-root {
+    padding: 1rem !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .MuiListItemIcon-root {
+    min-width: 40px !important;
+  }
+
+  .MuiListItemText-primary {
+    font-weight: 500 !important;
+  }
+}
+
+/* Animation Classes */
+.nav-link-wrapper {
+  transition: transform 0.2s ease;
+}
+
+.nav-link-wrapper:hover {
+  transform: translateY(-1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+/* Social Media Menu Styles */
+.social-button-wrapper {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.social-toggle-btn {
+  background: none;
+  border: none;
+  color: #E1306C;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.social-toggle-btn:hover {
+  transform: scale(1.1);
+}
+
+.social-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+ 
+}
+
+.social-link:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translateX(5px);
+}
+
+/* Mobile Styles */
+@media (max-width: 991px) {
+  .social-menu {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+  }
+
+  .social-link {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animation for social menu */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+}
+
+.about-profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #f7f9fb;
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.07);
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.profile-title {
+  font-size: 1.1rem;
+  color: #5b6b7a;
+  font-weight: 500;
+}
+
+.profile-location {
+  font-size: 1rem;
+  color: #7a8b9c;
+  margin-top: 0.2rem;
+}
+
+.profile-summary {
+  font-size: 1.08rem;
+  color: #333;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+.profile-section {
+  margin-bottom: 2rem;
+}
+
+.profile-section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.profile-tag {
+  background: #e9eef3;
+  color: #3a4a5e;
+  font-size: 1rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  transition: background 0.2s;
+}
+
+.profile-tag:hover {
+  background: #d3e2f7;
+}
+
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.testimonial {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 1px 6px 0 rgba(0,0,0,0.04);
+}
+
+.testimonial-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-top: 0.2rem;
+}
+
+.testimonial-content {
+  flex: 1;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.testimonial-name {
+  color: #2a3a4a;
+}
+
+.testimonial-year {
+  color: #7a8b9c;
+  font-size: 0.98rem;
+  font-weight: 400;
+}
+
+.testimonial-stars {
+  color: #f7b500;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-text {
+  color: #444;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+/* Responsive Styles */
+@media (max-width: 700px) {
+  .about-profile-container {
+    padding: 1.2rem 0.5rem;
+  }
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+  }
+  .profile-name {
+    font-size: 1.3rem;
+  }
+  .profile-section-title {
+    font-size: 1.1rem;
+  }
+  .testimonial {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .testimonial-avatar {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+.iridescent-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.1)
+  );
+  animation: iridescent 8s ease-in-out infinite;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes iridescent {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+ 
+

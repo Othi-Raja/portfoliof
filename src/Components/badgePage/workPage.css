@@ -1,0 +1,30 @@
+.work-container {
+    padding: 50px 0;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Light gray background */
+  }
+  
+  .badge-column {
+    position: relative;
+    overflow: visible !important; /* Ensures 3D object overflows */
+    z-index: 2; /* Ensures it's above other elements if needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .text-column {
+    text-align: left;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #555;
+  }
+  
