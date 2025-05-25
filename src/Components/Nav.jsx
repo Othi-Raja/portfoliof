@@ -113,7 +113,7 @@ const CustomNavbar = () => {
   const handleLinkClick = (linkId) => {
     setActiveLink(linkId);
     setIsDrawerOpen(false);
-  };
+  }; 
 
   return (
     <>
