@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
 export default function About() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { margin: "-100px" }); // ← removed `once: true`
