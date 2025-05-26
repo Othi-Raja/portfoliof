@@ -1,7 +1,7 @@
 import React, { StrictMode, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client';
 import  CustomNavbar from './components/Nav.jsx'
-import Home from './components/home.jsx'
+import Home from './components/Home.jsx'
 import { ToastContainer } from 'react-bootstrap'
 import About from './components/about/About.jsx'
 import LoadingSpinner from './components/Loader.jsx';
