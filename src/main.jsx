@@ -1,6 +1,6 @@
 import React, { StrictMode, useEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client';
-import  NavBar from './components/Nav.jsx'
+import  CustomNavbar from './components/Nav.jsx'
 import Home from './components/home.jsx'
 import { ToastContainer } from 'react-bootstrap'
 import About from './components/about/About.jsx'
@@ -25,7 +25,7 @@ function App() {
         <LoadingSpinner/>
       ) : (
         <>
-          <NavBar />
+          <CustomNavbar />
           <Home />
           <About/>
           <WorkPage/>
