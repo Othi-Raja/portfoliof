@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Marquee from 'react-fast-marquee';
 import image1 from '../../asserts/Poster/1.jpg';
@@ -9,64 +9,87 @@ import image5 from '../../asserts/Poster/5.jpg';
 import image6 from '../../asserts/Poster/6.jpg';
 import image7 from '../../asserts/Poster/7.jpg';
 import image8 from '../../asserts/Poster/8.jpg';
+import './poster.css'
 
 // Sample data - replace with your actual data
 const posters = [
     {
         id: 1,
         title: "Creative Design",
-        description: "A stunning example of modern design principles and creative thinking.",
+        description: "Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image1
     },
     {
         id: 2,
         title: "Digital Art",
-        description: "Exploring the boundaries of digital creativity and artistic expression.",
+        description: "Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image2
     },
     {
         id: 3,
         title: "Photography",
-        description: "Capturing moments that tell stories through the lens.",
+        description: " Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image3
     },
     {
         id: 4,
         title: "UI/UX Design",
-        description: "Creating intuitive and beautiful user experiences.",
+        description: " Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image4
     },
     {
         id: 5,
         title: "Brand Identity",
-        description: "Building memorable and impactful brand experiences.",
+        description: " Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image5
     },
     {
         id: 6,
         title: "Web Development",
-        description: "Crafting modern and responsive web applications.",
+        description: " Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image6
     },
     {
         id: 7,
         title: "Mobile Design",
-        description: "Designing for the mobile-first generation.",
+        description: " Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image7
     },
     {
         id: 8,
         title: "Motion Graphics",
-        description: "Bringing designs to life through animation.",
+        description: "Et aliqua tempor tempor consectetur tempor dolore magna. Magna consectetur lorem magna adipiscing lorem lorem consectetur amet dolore ut. Dolore eiusmod dolor elit labore incididunt do dolor eiusmod incididunt magna dolor. Dolore sit dolore ut tempor. Et sit aliqua dolor incididunt dolor labore. Sed ut sed lorem do ipsum. Elit ut sit dolore consectetur eiusmod dolore et sed sed sit. ",
         image: image8
     }
 ];
 
 export default function Poster() {
-    const [selectedPoster, setSelectedPoster] = useState(null);
+ 
+    const [selectedPoster, setSelectedPoster] = useState(posters[0]);
+  const scrollRef = useRef(null);
+
+  useEffect(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    let scrollSpeed = 1;
+    let frame;
+
+    const scroll = () => {
+      if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+        container.scrollLeft = 0;
+      } else {
+        container.scrollLeft += scrollSpeed;
+      }
+      frame = requestAnimationFrame(scroll);
+    };
+
+    frame = requestAnimationFrame(scroll);
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
     return (
-        <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="min-h-screen  py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-7xl mx-auto">
                 {/* <h1 className="text-4xl font-bold text-gray-900 mb-8 text-center">Our Work</h1> */}
                 
@@ -137,9 +160,9 @@ export default function Poster() {
                                         animate={{ scale: 1 }}
                                         transition={{ delay: 0.2 }}
                                     >
-                                        <div className="max-w-md w-full rounded">
+                                        <div className="max-w-md w-full  ">
                                             <motion.div
-                                                className="bg-white rounded-xl  overflow-hidden"
+                                                className="bg-white  overflow-hidden"
                                                 initial={{ y: 20 }}
                                                 animate={{ y: 0 }}
                                                 transition={{ delay: 0.3 }}
@@ -147,7 +170,7 @@ export default function Poster() {
                                                 <img draggable={false}
                                                     src={selectedPoster.image}
                                                     alt={selectedPoster.title}
-                                                    className="w-full object-contain   rounded"
+                                                    className="w-full object-contain"
                                                     style={{height:'500px'}}
                                                 />
                                                 {/* <div className="p-6">
@@ -174,16 +197,42 @@ export default function Poster() {
                                                 {selectedPoster.title}
                                             </motion.h2>
                                             <motion.p 
-                                                className="text-xl text-gray-600 leading-relaxed mb-8"
+                                                className="text-xl small text-pretty text-gray-600 leading-relaxed mb-8"
                                                 initial={{ y: 20 }}
                                                 animate={{ y: 0 }}
                                                 transition={{ delay: 0.6 }}
                                             >
                                                 {selectedPoster.description}
                                             </motion.p>
-                                         
+                                     {/* Thumbnail Gallery */}
+                                     <div className="">
+      <div ref={scrollRef} className="flex gap-4 overflow-x-auto p-4 scrollbar-hide">
+        {posters.map((poster) => (
+          <motion.div
+            key={poster.id}
+            className={`flex-shrink-0 w-24 h-24 cursor-pointer rounded-lg overflow-hidden ${
+              selectedPoster.id === poster.id ? '-translate-y-2' : ''
+            }`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setSelectedPoster(poster)}
+          >
+            <div className="w-full h-full bg-gray-50">
+              <img
+                draggable={false}
+                src={poster.image}
+                alt={poster.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </div>
                                         </div>
+                                       
                                     </motion.div>
+                                  
                                 </div>
                             </motion.div>
                         )}

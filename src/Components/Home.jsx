@@ -85,7 +85,7 @@ function Home() {
     <>
   
       <Container className="overflow-x-hidden" id="home">
-        <Row className='pb-5'>
+        <Row className='pb-5 sm:pt-5'>
           <Col xs={12} sm={6} md={6} lg={6} xl={6} className="cstm-col-1 d-flex flex-column justify-content-center align-items-start overflow-hidden">
             
             <motion.p 
