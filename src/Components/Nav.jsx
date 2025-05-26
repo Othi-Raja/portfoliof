@@ -14,7 +14,7 @@ import './index.css';
 
 gsap.registerPlugin(ScrollTrigger);
   
-const Nav = () => {
+const CustomNavbar = () => {
   const illoRef = useRef(null);
   const [isSpinning, setIsSpinning] = useState(true);
   const [activeLink, setActiveLink] = useState('home');
@@ -244,4 +244,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default CustomNavbar;
